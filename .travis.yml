@@ -7,3 +7,10 @@ before_install:
 
 script:
         - docker run laxman1983/docker-react npm run test -- --coverage
+
+deploy:
+        provider: azure_web_apps
+        username: AZURE_WA_USERNAME       # If AZURE_WA_USERNAME isn't set
+        password: AZURE_WA_PASSWORD   # If AZURE_WA_PASSWORD isn't set
+        site: AZURE_WA_SITE       # If AZURE_WA_SITE isn't set
+        slot: azure_deployment_slotname       # (optional) If AZURE_WA_SLOT isn't set
